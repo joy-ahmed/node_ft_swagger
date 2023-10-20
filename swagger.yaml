@@ -1,6 +1,28 @@
 openapi: 3.1.0
 
 info:
-  title: Sample API
-  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  title: API documentation with Swagger
+  description: Project starter for API documentation
   version: 0.1.9
+
+servers:
+  - url: http://localhost:3000/api/v1
+    description: localhost version of API server
+  - url: https://localhost:3000/api/v1
+    description: localhost version of API server with SSL
+
+
+paths:
+  /instagram:
+    get:
+      summary: Returns an instance of instagram
+      description: Instance of instagram
+      responses:
+        '200':
+          description: A Json Object of Instagram
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
